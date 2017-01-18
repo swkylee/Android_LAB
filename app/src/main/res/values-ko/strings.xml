@@ -3,4 +3,10 @@
     <string name="app_name">안드로이드랩</string>
     <string name="hello_message">헬로 월드!</string>
     <string name="buttonText">버튼입니다!</string>
+    <string name="title_activity_login">로그인 활동</string>
+    <string name="login">로그인</string>
+    <string name="password">비밀번호</string>
+    <string name="radioButton">라디오 버튼</string>
+    <string name="checkBox">체크박스</string>
+    <string name="enableSomething">가능</string>
 </resources>
