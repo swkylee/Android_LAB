@@ -9,4 +9,5 @@
     <string name="radioButton">Radio Button</string>
     <string name="checkBox">Check Box</string>
     <string name="enableSomething">Enable Something</string>
+    <string name="next">Next</string>
 </resources>
