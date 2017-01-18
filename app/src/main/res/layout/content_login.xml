@@ -13,7 +13,6 @@
     tools:context="com.example.swkyl.androidlabs.LoginActivity"
     tools:showIn="@layout/activity_login"
     android:orientation="vertical">
-
     <TextView android:text="@string/login"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
