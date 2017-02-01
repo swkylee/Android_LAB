@@ -10,4 +10,10 @@
     <string name="checkBox">체크박스</string>
     <string name="enableSomething">가능</string>
     <string name="next">다음</string>
+    <string name="dialog_message">현재 액티비티를 끝내시겠습니까?</string>
+    <string name="dialog_title">종료</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="email">email</string>
+    <string name="msg">내 정보가 제공됨</string>
 </resources>

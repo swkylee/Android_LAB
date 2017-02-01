@@ -33,7 +33,8 @@
         <EditText android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textEditPasteWindowLayout="@string/app_name"
-            android:inputType="textEmailAddress">
+            android:inputType="textEmailAddress"
+            android:id="@+id/loginEmail">
         </EditText>
         <TextView android:text="@string/password"
             android:layout_height="43dp"
@@ -41,18 +42,18 @@
         </TextView>
         <EditText android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword">
+            android:inputType="textPassword"
+            android:id="@+id/loginPassword">
         </EditText>
 
     </LinearLayout>
 
     <Button
-        android:text="@string/next"
+        android:text="@string/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp" />
+        android:id="@+id/button5"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

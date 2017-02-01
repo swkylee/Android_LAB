@@ -10,4 +10,10 @@
     <string name="checkBox">Check Box</string>
     <string name="enableSomething">Enable Something</string>
     <string name="next">Next</string>
+    <string name="dialog_message">Do you want to finish the activity?</string>
+    <string name="dialog_title">Finish</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="email">email</string>
+    <string name="msg">My information to share</string>
 </resources>
