@@ -10,15 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
-
-import java.io.IOException;
 
 public class ListItemsActivity extends AppCompatActivity implements View.OnClickListener {
     protected static final String ACTIVITY_NAME = "ListItemsActivity";
@@ -31,9 +27,8 @@ public class ListItemsActivity extends AppCompatActivity implements View.OnClick
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
-        ImageButton b3 = (ImageButton) findViewById(R.id.button4);
-        b3.setOnClickListener(this);
         mImageView = (ImageButton) findViewById(R.id.button4);
+        mImageView.setOnClickListener(this);
         Switch s1 = (Switch) findViewById(R.id.switch1);
         s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
@@ -74,9 +69,9 @@ public class ListItemsActivity extends AppCompatActivity implements View.OnClick
     public void setOnCheckedChanged(boolean isChecked) {
         CharSequence text;
         if (isChecked) {
-            text = "Switch is On";// "Switch is Off"
+            text = getResources().getString(R.string.switchOff);// "Switch is Off"
         } else {
-            text = "Switch is Offx`";// "Switch is Off"
+            text = getResources().getString(R.string.switchOn);// "Switch is Off"
         }
         int duration = Toast.LENGTH_SHORT; //= Toast.LENGTH_LONG if Off
 

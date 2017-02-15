@@ -21,13 +21,28 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         Button b1 = (Button) findViewById(R.id.button1);
         b1.setOnClickListener(this);
+
+        Button b2 = (Button) findViewById(R.id.button2);
+        b2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         //v.getId();
-        Intent intent1 = new Intent(this, ListItemsActivity.class);
-        startActivityForResult(intent1,5);
+        switch (v.getId()) {
+            case R.id.button1:
+                // i am button
+                Intent intent1 = new Intent(this, ListItemsActivity.class);
+                startActivityForResult(intent1,5);
+                break;
+            case R.id.button2:
+                // start chat button
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                Intent intent2 = new Intent(this, ChatWindow.class);
+                startActivityForResult(intent2,5);
+                break;
+        }
+
 
     }
 

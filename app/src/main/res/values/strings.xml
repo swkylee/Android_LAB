@@ -15,4 +15,9 @@
     <string name="cancel">Cancel</string>
     <string name="email">email</string>
     <string name="msg">My information to share</string>
+    <string name="startChat">Start Chat</string>
+    <string name="send">Send</string>
+    <string name="switchOn">Switch is On</string>
+    <string name="switchOff">Switch is Off</string>
+
 </resources>

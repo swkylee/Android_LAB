@@ -16,4 +16,8 @@
     <string name="cancel">취소</string>
     <string name="email">email</string>
     <string name="msg">내 정보가 제공됨</string>
+    <string name="startChat">대화 시작</string>
+    <string name="send">전송</string>
+    <string name="switchOn">스위치 켜짐</string>
+    <string name="switchOff">스위치 꺼짐</string>
 </resources>
