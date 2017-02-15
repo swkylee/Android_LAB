@@ -55,7 +55,7 @@ public class ListItemsActivity extends AppCompatActivity implements View.OnClick
                                 Intent resultIntent = new Intent(  );
                                 resultIntent.putExtra("Response", "My information to share");
                                 setResult(Activity.RESULT_OK, resultIntent);
-                                
+
                                 finish();
 
                             }
