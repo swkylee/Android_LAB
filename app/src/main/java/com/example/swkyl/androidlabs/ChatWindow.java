@@ -1,8 +1,12 @@
 package com.example.swkyl.androidlabs;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,35 +18,56 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ChatWindow extends AppCompatActivity {
-
-    private EditText chatMessageField;
-    private Button sendMessageButton;
-    private ListView listView;
-    private ArrayList<String> chatMessages;
+    private static String ACTIVITY_NAME = "ChatWindow";
+    private ArrayList<String> chatMessages = new ArrayList<String>();;
+    private SQLiteDatabase db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
-        chatMessageField = (EditText) findViewById(R.id.chatText);
-        sendMessageButton = (Button) findViewById(R.id.sendButton);
-        listView = (ListView) findViewById(R.id.messageList);
+        final ListView listView = (ListView)findViewById(R.id.messageList);
+        final Button sendMessageButton = (Button)findViewById(R.id.sendButton);
+        final EditText chatMessageField = (EditText)findViewById(R.id.chatText);
 
-        chatMessages = new ArrayList<String>();
+        // handling DB
+        final ChatDatabaseHelper dbHelper;dbHelper = new ChatDatabaseHelper(this);
+        db = dbHelper.getWritableDatabase();
+
+        Cursor cursor = db.query(false, dbHelper.tableName, new String[]{dbHelper.KEY_ID,dbHelper.KEY_MESSAGE}, null,null,null,null,null,null);
+        //Cursor cursor = db.rawQuery("select * from ?", new String[] { dbHelper.tableName});
+        cursor.moveToFirst();
+
+        int index = cursor.getColumnIndex(dbHelper.KEY_MESSAGE);
+
+        while(!cursor.isAfterLast() ) {
+            String t = cursor.getString(index);
+            chatMessages.add(t);
+
+            Log.i(ACTIVITY_NAME, "SQL MESSAGE:" + cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE)));
+            Log.i(ACTIVITY_NAME, "Cursor’s  column count = " + cursor.getColumnCount() );
+
+            cursor.moveToNext();
+        }
+
+        cursor.close();
 
         //in this case, “this” is the ChatWindow, which is-A Context object
-        final ChatAdapter messageAdapter =new ChatAdapter( this );
-        listView.setAdapter (messageAdapter);
-
-
+        final ChatAdapter messageAdapter = new ChatAdapter( this );
+        listView.setAdapter(messageAdapter);
 
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                chatMessages.add(chatMessageField.getText().toString());
-                messageAdapter.notifyDataSetChanged(); //this restarts the process of getCount()/ getView()
+                String temp = chatMessageField.getText().toString();
+                chatMessages.add(temp);
+                messageAdapter.notifyDataSetChanged();
                 chatMessageField.setText("");
+
+                ContentValues cValues = new ContentValues();
+                cValues.put(dbHelper.KEY_MESSAGE, temp);
+                db.insert(dbHelper.tableName, null, cValues);
             }
         });
     }
@@ -74,9 +99,14 @@ public class ChatWindow extends AppCompatActivity {
 
             TextView message = (TextView) result.findViewById(R.id.message_text);
             message.setText(getItem(position));
+
             return result;
         }
     }
 
-
+    protected void onDestroy() {
+        Log.i(ACTIVITY_NAME, "In onDestroy()");
+        super.onDestroy();
+        db.close();
+    }
 }
