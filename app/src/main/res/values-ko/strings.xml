@@ -20,4 +20,5 @@
     <string name="send">전송</string>
     <string name="switchOn">스위치 켜짐</string>
     <string name="switchOff">스위치 꺼짐</string>
+    <string name="WeatherForecast">일기예보</string>
 </resources>

@@ -24,6 +24,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         Button b2 = (Button) findViewById(R.id.button2);
         b2.setOnClickListener(this);
+
+        Button b3 = (Button) findViewById(R.id.button3);
+        b3.setOnClickListener(this);
     }
 
     @Override
@@ -41,9 +44,13 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent2 = new Intent(this, ChatWindow.class);
                 startActivityForResult(intent2,5);
                 break;
+            case R.id.button3:
+                // WeatherForecast button
+                Log.i(ACTIVITY_NAME, "User clicked WeatherForecast");
+                Intent intent3 = new Intent(this, WeatherForecast.class);
+                startActivityForResult(intent3,5);
+                break;
         }
-
-
     }
 
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
