@@ -3,4 +3,22 @@
     <string name="app_name">안드로이드랩</string>
     <string name="hello_message">헬로 월드!</string>
     <string name="buttonText">버튼입니다!</string>
+    <string name="title_activity_login">로그인활동</string>
+    <string name="login">로그인</string>
+    <string name="password">비밀번호</string>
+    <string name="radioButton">라디오버튼</string>
+    <string name="checkBox">체크박스</string>
+    <string name="enableSomething">가능</string>
+    <string name="next">다음</string>
+    <string name="dialog_message">현재 액티비티를 끝내시겠습니까?</string>
+    <string name="dialog_title">종료</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="email">email</string>
+    <string name="msg">내 정보가 제공됨</string>
+    <string name="startChat">대화 시작</string>
+    <string name="send">전송</string>
+    <string name="switchOn">스위치 켜짐</string>
+    <string name="switchOff">스위치 꺼짐</string>
+    <string name="WeatherForecast">일기예보</string>
 </resources>
