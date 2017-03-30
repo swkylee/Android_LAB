@@ -21,4 +21,6 @@
     <string name="switchOn">스위치 켜짐</string>
     <string name="switchOff">스위치 꺼짐</string>
     <string name="WeatherForecast">일기예보</string>
+    <string name="testToolbar">툴바 테스트</string>
+    <string name="newMessage">새 메세지를 넣어주세요</string>
 </resources>

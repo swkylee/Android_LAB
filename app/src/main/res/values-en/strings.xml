@@ -21,4 +21,6 @@
     <string name="switchOn">Switch is On</string>
     <string name="switchOff">Switch is Off</string>
     <string name="WeatherForecast">Weather Forecast</string>
+    <string name="testToolbar">Test Toolbar</string>
+    <string name="newMessage">Enter a new message</string>
 </resources>

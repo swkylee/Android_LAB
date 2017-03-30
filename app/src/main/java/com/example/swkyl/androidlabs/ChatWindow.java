@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,6 +69,14 @@ public class ChatWindow extends AppCompatActivity {
                 ContentValues cValues = new ContentValues();
                 cValues.put(dbHelper.KEY_MESSAGE, temp);
                 db.insert(dbHelper.tableName, null, cValues);
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                Log.i(ACTIVITY_NAME,"positin :"+position +", id:"+id);
+
             }
         });
     }
